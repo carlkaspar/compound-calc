@@ -1,9 +1,7 @@
 <template>
-  <currency-input label="Currency" />
-  <number-input label="Number" />
+  <compound-interest-calculator />
 </template>
 
 <script setup lang="ts">
-import CurrencyInput from "./shared/inputs/CurrencyInput.vue";
-import NumberInput from "./shared/inputs/NumberInput.vue";
+import CompoundInterestCalculator from "./modules/interest-calculator/CompoundInterestCalculator.vue";
 </script>
