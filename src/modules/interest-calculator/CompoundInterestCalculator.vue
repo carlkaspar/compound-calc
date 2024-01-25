@@ -8,12 +8,12 @@
       <div v-if="state" class="flex flex-col">
         <span
           >Total amount of contributions:
-          <b>{{ state.totalContributions }}</b></span
+          <b>{{ state.totalContributions }} €</b></span
         >
         <span
           >Total future value after
           {{ state.futureValueByYear.length - 1 }} years:
-          <b>{{ state.totalFutureValue }}</b></span
+          <b>{{ state.totalFutureValue }} €</b></span
         >
       </div>
 
@@ -21,7 +21,6 @@
         v-if="state"
         :future-value-by-year="state.futureValueByYear"
         :contributions-by-year="state.contributionsValueByYear"
-        currency="€"
       />
     </div>
   </div>

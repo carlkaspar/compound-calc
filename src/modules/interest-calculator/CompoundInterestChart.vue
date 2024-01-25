@@ -12,7 +12,6 @@ Chart.register(...registerables);
 const props = defineProps<{
   contributionsByYear: number[];
   futureValueByYear: number[];
-  currency: string;
 }>();
 
 const labels = computed(() =>
