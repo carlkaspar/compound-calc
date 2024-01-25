@@ -31,7 +31,10 @@ export function useCompoundInterestForm() {
     initialValues,
   });
 
-  const submit = handleSubmit((values) => calculate(values));
+  const submit = handleSubmit(
+    (values) => calculate(values),
+    (_error) => calculate(undefined),
+  );
 
   watchImmediate(values, () => submit());
 
