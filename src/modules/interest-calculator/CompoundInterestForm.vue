@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col gap-4">
     <input-wrapper label="Initial investment" :error="errors.initialInvestment">
       <currency-input
         v-model="initialInvestment"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <label :for="name" class="sr-only">{{ label }}</label>
-    <div class="mt-2">
+    <div class="mt-1">
       <input
         v-model="model"
         type="number"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <label class="sr-only">{{ parentLabel }}</label>
-    <fieldset class="mt-4">
+    <fieldset class="mt-1">
       <div class="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
         <div
           v-for="value in values"

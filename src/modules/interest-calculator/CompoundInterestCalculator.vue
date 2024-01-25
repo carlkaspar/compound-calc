@@ -11,7 +11,9 @@
           <b>{{ state.totalContributions }}</b></span
         >
         <span
-          >Total future value: <b>{{ state.totalFutureValue }}</b></span
+          >Total future value after
+          {{ state.futureValueByYear.length - 1 }} years:
+          <b>{{ state.totalFutureValue }}</b></span
         >
       </div>
 

@@ -1,12 +1,15 @@
 <template>
-  <div>
-    <span class="block text-sm font-medium leading-6 text-gray-900">{{
-      label
-    }}</span>
+  <div class="mb-1">
+    <div class="flex justify-between">
+      <span class="block text-sm font-medium leading-6 text-gray-900">{{
+        label
+      }}</span>
+
+      <span class="mt-2 text-xs text-red-600 h-4">
+        {{ error }}
+      </span>
+    </div>
     <slot />
-    <p class="mt-2 text-sm text-red-600">
-      {{ error }}
-    </p>
   </div>
 </template>
 
