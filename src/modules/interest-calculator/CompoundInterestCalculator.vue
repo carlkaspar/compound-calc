@@ -1,6 +1,16 @@
 <template>
   <compound-interest-form />
 
+  <div v-if="state" class="flex flex-col">
+    <span
+      >Total amount of contributions:
+      <b>{{ state.totalContributions }}</b></span
+    >
+    <span
+      >Total future value: <b>{{ state.totalFutureValue }}</b></span
+    >
+  </div>
+
   <compound-interest-chart
     v-if="state"
     :future-value-by-year="state.futureValueByYear"
