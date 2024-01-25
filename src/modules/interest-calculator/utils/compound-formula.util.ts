@@ -4,7 +4,7 @@ export const DAYS_IN_YEAR = 365;
 export const DAYS_IN_MONTH = 30.437;
 export const MONTHS_IN_YEAR = 12;
 
-export function calculateGrowth({
+export function calculateGrowthByYear({
   initialInvestment,
   contributionFrequency,
   contributionAmount,
@@ -38,19 +38,24 @@ export function calculateGrowth({
   return amountByYear.map((amount) => Math.floor(amount));
 }
 
-export function calculateTotalContributions({
+export function calculateTotalContributionsByYear({
   initialInvestment,
   contributionFrequency,
   contributionAmount,
   years,
 }: CompoundInterestForm) {
+  const contributionsByYear = [initialInvestment];
   const totalContributionsPerYear =
     contributionFrequency === "YEARLY"
       ? contributionAmount
       : contributionAmount * 12;
-  const totalContributions = totalContributionsPerYear * years;
 
-  return initialInvestment + totalContributions;
+  for (let year = 0; year < years; year++) {
+    const lastYearsValue = contributionsByYear[contributionsByYear.length - 1];
+    contributionsByYear.push(lastYearsValue + totalContributionsPerYear);
+  }
+
+  return contributionsByYear;
 }
 
 function compoundInterestFormulaPerMonth({
