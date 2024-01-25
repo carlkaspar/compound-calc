@@ -16,7 +16,7 @@ const props = defineProps<{
 }>();
 
 const labels = computed(() =>
-  [...Array(props.futureValueByYear.length + 1).keys()].map(
+  [...Array(props.futureValueByYear.length).keys()].map(
     (year) => `Year ${year}`,
   ),
 );
@@ -24,8 +24,18 @@ const labels = computed(() =>
 const chartData = computed<ChartData<"line">>(() => ({
   labels: labels.value,
   datasets: [
-    { data: props.futureValueByYear },
-    { data: props.contributionsByYear },
+    {
+      data: props.futureValueByYear,
+      backgroundColor: "#09814A",
+      borderColor: "#0FD27A",
+      label: "Future value",
+    },
+    {
+      data: props.contributionsByYear,
+      backgroundColor: "#CF3A3A",
+      borderColor: "#DD7373",
+      label: "Contributions",
+    },
   ],
 }));
 </script>

@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h1>Compound interest calculator</h1>
-
     <input-wrapper label="Initial investment" :error="errors.initialInvestment">
       <currency-input
         v-model="initialInvestment"
