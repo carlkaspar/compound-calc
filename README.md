@@ -1,46 +1,70 @@
-# compound-calc
+# Compound Calculator
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the Compound Calculator project! This application is designed to help users calculate compound interest easily and efficiently. Below are the instructions to set up and run the project on your local machine.
 
-## Recommended IDE Setup
+## Prerequisites
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Before you start, ensure you have the following installed:
 
-## Type Support for `.vue` Imports in TS
+- Git
+- Node.js
+- npm (Node Package Manager)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Installing Node.js and npm
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Node.js is a runtime environment that allows you to run JavaScript on the server side. npm is a package manager for JavaScript, and is used to install dependencies for the project.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### Windows and MacOS Users
 
-## Customize configuration
+1. Visit the [Node.js website](https://nodejs.org/).
+2. Download the installer for your operating system (Windows or MacOS).
+3. Run the installer and follow the prompts to install Node.js and npm.
+4. After installation, open a terminal or command prompt and run `node -v` and `npm -v` to verify the installation.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Linux Users
 
-## Project Setup
+For Linux users, Node.js can be installed via package manager. Here's an example for Ubuntu/Debian systems:
 
-```sh
+```bash
+sudo apt update
+sudo apt install nodejs
+sudo apt install npm
+```
+
+Verify the installation by running `node -v` and `npm -v` in your terminal.
+
+## Cloning the Repository and Running the App
+
+1. **Clone the Repository**
+
+Open your terminal or command prompt and run the following command:
+
+```bash
+git clone git@github.com:carlkaspar/compound-calc.git
+```
+
+2. **Navigate to the Project Directory**
+
+Once the repository is cloned, navigate to the compound-calc directory:
+
+```bash
+cd compound-calc
+```
+
+3. **Install Dependencies**
+
+Inside the project directory, install the necessary dependencies using npm:
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+4. **Run the Vue app**
 
-```sh
+After installing the dependencies, you can start the Vue application:
+
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+This will start the development server. Once it's running, you can view the application in your web browser by visiting http://localhost:5173/.
