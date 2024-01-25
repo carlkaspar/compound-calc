@@ -81,3 +81,4 @@ This application is build with Vue3 JS framework. The styles are applied by usin
 6. `useCompoundInterestCalculator.ts` is responsible for holding the state of the interest computation which is done by using the vue-use library createSharedComposable fn that effectively creates a singleton service accessible from any vue component / composable and orchestrating the computation itself.
 7. `compound-formula.util.ts` actually describes the formulas used to calculate the compound & the contributions by time
 8. `compound-interest-form.model.ts` describes the form validation schema by using the zod library
+9. `CompoundInterestChart` is responsible for rendering the line chart using chart.js library
