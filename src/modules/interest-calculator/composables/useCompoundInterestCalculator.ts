@@ -1,17 +1,15 @@
 import { createSharedComposable } from "@vueuse/core";
 import type { CompoundInterestForm } from "../types/compound-interest-form.model";
 import { computed, ref } from "vue";
+import {
+  calculateGrowth,
+  calculateTotalContributions,
+} from "../utils/compound-formula.util";
 
 type State = {
   totalFutureValue: number;
   totalContributions: number;
-};
-
-const CONTRIBUTIONS_PER_YEAR = {
-  MONTHLY: 12,
-  YEARLY: 1,
-} as const satisfies {
-  [Key in CompoundInterestForm["contributionFrequency"]]: number;
+  valueByYear: number[];
 };
 
 export default createSharedComposable(() => {
@@ -23,22 +21,12 @@ export default createSharedComposable(() => {
       return;
     }
 
-    const {
-      initialInvestment,
-      contributionAmount,
-      contributionFrequency,
-      years,
-    } = values;
+    const valueByYear = calculateGrowth(values);
 
     state.value = {
-      totalContributions:
-        initialInvestment +
-        contributionAmount *
-          CONTRIBUTIONS_PER_YEAR[
-            contributionFrequency as keyof typeof CONTRIBUTIONS_PER_YEAR
-          ] *
-          years,
-      totalFutureValue: 0,
+      totalContributions: calculateTotalContributions(values),
+      totalFutureValue: valueByYear[valueByYear.length - 1],
+      valueByYear,
     };
   }
 

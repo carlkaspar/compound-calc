@@ -4,8 +4,8 @@ import {
   CompoundInterestFormSchema,
   type CompoundInterestForm,
 } from "../types/compound-interest-form.model";
-import { watch } from "vue";
 import useCompoundInterestCalculator from "./useCompoundInterestCalculator";
+import { watchImmediate } from "@vueuse/core";
 
 const initialValues: CompoundInterestForm = {
   initialInvestment: 5000,
@@ -31,9 +31,9 @@ export function useCompoundInterestForm() {
     initialValues,
   });
 
-  watch(values, () => submit());
-
   const submit = handleSubmit((values) => calculate(values));
+
+  watchImmediate(values, () => submit());
 
   const { value: initialInvestment, errorMessage: initialInvestmentError } =
     useField<CompoundInterestForm["initialInvestment"]>(
