@@ -36,9 +36,10 @@
 
     <input-wrapper label="Years of growth" :error="errors.years">
       <number-input
-        v-model="years"
+        :model-value="years"
         label="Years of growth"
         :name="FORM_FIELD_NAME.years"
+        @on-update-model-value="(val) => (years = val)"
       />
     </input-wrapper>
 
@@ -47,16 +48,17 @@
       :error="errors.estimatedReturn"
     >
       <number-input
-        v-model="estimatedReturn"
+        :model-value="estimatedReturn"
         label="Estimated average return"
         :name="FORM_FIELD_NAME.estimatedReturn"
+        @on-update-model-value="(val) => (estimatedReturn = val)"
       />
     </input-wrapper>
   </div>
 </template>
 
 <script setup lang="ts">
-import InputWrapper from "@/shared/inputs/InputWrapper.vue";
+import InputWrapper from "@/shared/inputs/InputWrapper";
 import CurrencyInput from "@/shared/inputs/CurrencyInput";
 import NumberInput from "@/shared/inputs/NumberInput";
 import useGenericRadioInput from "@/shared/inputs/RadioInput";
