@@ -2,9 +2,10 @@
   <div class="flex flex-col gap-4">
     <input-wrapper label="Initial investment" :error="errors.initialInvestment">
       <currency-input
-        v-model="initialInvestment"
+        :model-value="initialInvestment"
         label="Initial investment"
         :name="FORM_FIELD_NAME.initialInvestment"
+        @on-model-value-update="(val) => (initialInvestment = val)"
       />
     </input-wrapper>
 
@@ -26,9 +27,10 @@
       :error="errors.contributionAmount"
     >
       <currency-input
-        v-model="contributionAmount"
+        :model-value="contributionAmount"
         label="Contribution amount"
         :name="FORM_FIELD_NAME.contributionAmount"
+        @on-model-value-update="(val) => (contributionAmount = val)"
       />
     </input-wrapper>
 
@@ -55,7 +57,7 @@
 
 <script setup lang="ts">
 import InputWrapper from "@/shared/inputs/InputWrapper.vue";
-import CurrencyInput from "@/shared/inputs/CurrencyInput.vue";
+import CurrencyInput from "@/shared/inputs/CurrencyInput";
 import NumberInput from "@/shared/inputs/NumberInput";
 import useGenericRadioInput from "@/shared/inputs/RadioInput";
 import {
