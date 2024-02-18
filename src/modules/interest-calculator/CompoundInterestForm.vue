@@ -56,7 +56,7 @@
 <script setup lang="ts">
 import InputWrapper from "@/shared/inputs/InputWrapper.vue";
 import CurrencyInput from "@/shared/inputs/CurrencyInput.vue";
-import NumberInput from "@/shared/inputs/NumberInput.vue";
+import NumberInput from "@/shared/inputs/NumberInput";
 import useGenericRadioInput from "@/shared/inputs/RadioInput";
 import {
   useCompoundInterestForm,
