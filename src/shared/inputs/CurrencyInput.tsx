@@ -7,7 +7,7 @@ type Props = {
 };
 
 type Emits = {
-  onModelValueUpdate: (value: number) => void;
+  onModelValueUpdate: (value: number | "") => void;
 };
 
 const CURRENCY = { abbreviation: "EUR", symbol: "€" } as const;
@@ -31,7 +31,9 @@ export default defineComponent<Props, Emits>(
             onInput={(e) =>
               emit(
                 "onModelValueUpdate",
-                Number((e.target as HTMLInputElement).value),
+                (e.target as HTMLInputElement).value
+                  ? Number((e.target as HTMLInputElement).value)
+                  : "",
               )
             }
           />

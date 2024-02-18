@@ -7,7 +7,7 @@ type Props = {
 };
 
 type Emits = {
-  onUpdateModelValue: (value: number) => void;
+  onUpdateModelValue: (value: number | "") => void;
 };
 
 export default defineComponent<Props, Emits>(
@@ -26,7 +26,9 @@ export default defineComponent<Props, Emits>(
             onInput={(e) =>
               emit(
                 "onUpdateModelValue",
-                Number((e.target as HTMLInputElement).value),
+                (e.target as HTMLInputElement).value
+                  ? Number((e.target as HTMLInputElement).value)
+                  : "",
               )
             }
           />

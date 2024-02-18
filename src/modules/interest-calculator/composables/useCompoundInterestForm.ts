@@ -38,10 +38,9 @@ export function useCompoundInterestForm() {
 
   watchImmediate(values, () => submit());
 
-  const { value: initialInvestment, errorMessage: initialInvestmentError } =
-    useField<CompoundInterestForm["initialInvestment"]>(
-      FORM_FIELD_NAME.initialInvestment,
-    );
+  const { value: initialInvestment } = useField<
+    CompoundInterestForm["initialInvestment"]
+  >(FORM_FIELD_NAME.initialInvestment);
 
   const { value: contributionFrequency } = useField<
     CompoundInterestForm["contributionFrequency"]
