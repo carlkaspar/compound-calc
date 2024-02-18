@@ -37,9 +37,9 @@ export default defineComponent<Props>(
 
     return () => {
       return (
-        <>
+        <div>
           <LineChart chartData={chartData.value} />
-        </>
+        </div>
       );
     };
   },

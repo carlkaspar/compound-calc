@@ -3,10 +3,6 @@ import CompoundInterestCalculatorVue from "./modules/interest-calculator/Compoun
 
 export default defineComponent(() => {
   return () => {
-    return (
-      <>
-        <CompoundInterestCalculatorVue />
-      </>
-    );
+    return <CompoundInterestCalculatorVue />;
   };
 });

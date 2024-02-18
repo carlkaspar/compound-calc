@@ -14,7 +14,7 @@ export default defineComponent<Props, any, any, Slots>(
     const error = computed(() => props.error ?? "");
 
     return () => (
-      <>
+      <div>
         <div class="mb-1">
           <div class="flex justify-between">
             <span class="block text-sm font-medium leading-6 text-gray-900">
@@ -25,7 +25,7 @@ export default defineComponent<Props, any, any, Slots>(
           </div>
           {slots.default()}
         </div>
-      </>
+      </div>
     );
   },
   { props: ["error", "label"] },
