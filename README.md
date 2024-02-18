@@ -73,8 +73,8 @@ This will start the development server. Once it's running, you can view the appl
 
 This application is build with Vue3 JS framework. The styles are applied by using tailwindcss utility classes. The form schema validation is implemented with zod. The validation is orchestrated by vee-validate. The line-chart for visualizing compound interest is drawn using chart.js.
 
-1. Everything in Vue app starts from the `main.ts` file, which mounts the `App.vue`
-2. `App.vue` is only responsible for rendering the `CompoundInterestCalculator` component
+1. Everything in Vue app starts from the `main.ts` file, which mounts the `App`
+2. `App` is only responsible for rendering the `CompoundInterestCalculator` component
 3. `CompoundInterestCalculator` component is responsible for some layout styles & rendering the `CompoundInterestForm` and `CompoundInterestChart` components. It also renders the simple total output for contributions & future value.
 4. `CompoundInterestForm` is responsible for rendering all the inputs, adding some styles & updating the values of `useCompoundInterestForm` hook.
 5. `useCompoundInterestForm.ts` is responsible for creating a context for the form using vee-validate library, setting the validation schema for the form which is declared in `compound-interest-form.model.ts` and submitting the form by calling the submit fn of `useCompoundInterestCalculator` hook
