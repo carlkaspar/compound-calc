@@ -8,7 +8,7 @@ type Props<T> = {
 };
 
 type Emits<T> = {
-  onModelValueUpdate: (value: T) => void;
+  modelValueUpdate: (value: T) => void;
 };
 
 export default function useGenericRadioInput<TValue extends string>() {
@@ -31,7 +31,7 @@ export default function useGenericRadioInput<TValue extends string>() {
                       class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                       onChange={(e) =>
                         emit(
-                          "onModelValueUpdate",
+                          "modelValueUpdate",
                           (e.target as HTMLInputElement).value as TValue,
                         )
                       }
@@ -52,7 +52,7 @@ export default function useGenericRadioInput<TValue extends string>() {
     },
     {
       props: ["modelValue", "values", "parentLabel", "inputName"],
-      emits: ["onModelValueUpdate"],
+      emits: ["modelValueUpdate"],
     },
   );
 }

@@ -37,7 +37,7 @@ export default defineComponent(() => {
             modelValue={initialInvestment.value}
             label="Initial investment"
             name={FORM_FIELD_NAME.initialInvestment}
-            onOnModelValueUpdate={(val) =>
+            onModelValueUpdate={(val) =>
               (initialInvestment.value = val as number)
             }
           />
@@ -52,7 +52,7 @@ export default defineComponent(() => {
             values={FREQUENCY_VALUES as any}
             parentLabel="Contribution frequency"
             inputName="contribution_frequency"
-            onOnModelValueUpdate={(value) =>
+            onModelValueUpdate={(value) =>
               (contributionFrequency.value = value)
             }
           />
@@ -66,7 +66,7 @@ export default defineComponent(() => {
             modelValue={contributionAmount.value}
             label="Contribution amount"
             name={FORM_FIELD_NAME.contributionAmount}
-            onOnModelValueUpdate={(val) =>
+            onModelValueUpdate={(val) =>
               (contributionAmount.value = val as number)
             }
           />
@@ -77,7 +77,7 @@ export default defineComponent(() => {
             modelValue={years.value}
             label="Years of growth"
             name={FORM_FIELD_NAME.years}
-            onOnUpdateModelValue={(val) => (years.value = val as number)}
+            onUpdateModelValue={(val) => (years.value = val as number)}
           />
         </InputWrapper>
 
@@ -89,7 +89,7 @@ export default defineComponent(() => {
             modelValue={estimatedReturn.value}
             label="Estimated average return"
             name={FORM_FIELD_NAME.estimatedReturn}
-            onOnUpdateModelValue={(val) =>
+            onUpdateModelValue={(val) =>
               (estimatedReturn.value = val as number)
             }
           />
