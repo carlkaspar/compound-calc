@@ -14,9 +14,10 @@
     >
       <radio-input
         v-model="contributionFrequency"
-        :values="FREQUENCY_VALUES"
+        :values="FREQUENCY_VALUES as any"
         parent-label="Contribution frequency"
         input-name="contribution_frequency"
+        @on-model-value-update="(value) => (contributionFrequency = value)"
       />
     </input-wrapper>
 
@@ -56,7 +57,7 @@
 import InputWrapper from "@/shared/inputs/InputWrapper.vue";
 import CurrencyInput from "@/shared/inputs/CurrencyInput.vue";
 import NumberInput from "@/shared/inputs/NumberInput.vue";
-import RadioInput from "@/shared/inputs/RadioInput.vue";
+import useGenericRadioInput from "@/shared/inputs/RadioInput";
 import {
   useCompoundInterestForm,
   FORM_FIELD_NAME,
@@ -66,6 +67,9 @@ const FREQUENCY_VALUES = [
   { value: "YEARLY", label: "Yearly" },
   { value: "MONTHLY", label: "Monthly" },
 ] as const;
+
+const RadioInput =
+  useGenericRadioInput<(typeof FREQUENCY_VALUES)[number]["value"]>();
 
 const {
   initialInvestment,
